@@ -32,6 +32,8 @@ func (c *clientMock) PutRecords(input *k.PutRecordsInput) (*k.PutRecordsOutput, 
 	return res.Response, nil
 }
 
+// Existing test cases
+
 type testCase struct {
 	// configuration
 	name    string      // test name
@@ -70,7 +72,7 @@ var testCases = []testCase{
 		},
 	},
 	{
-		"two records with batch count 1",
+		"testing one record with batch count 1",
 		&Config{BatchCount: 1, AggregateBatchCount: 1},
 		[]string{"hello", "world"},
 		&clientMock{
@@ -95,7 +97,7 @@ var testCases = []testCase{
 		},
 	},
 	{
-		"two records with batch count 2, simulating retries",
+		"testing two records with batch count 2, simulating retries",
 		&Config{BatchCount: 2, AggregateBatchCount: 1},
 		[]string{"hello", "world"},
 		&clientMock{
@@ -124,7 +126,7 @@ var testCases = []testCase{
 		},
 	},
 	{
-		"2 bulks of 10 records",
+		"testing 2 bulks of 10 records",
 		&Config{BatchCount: 10, AggregateBatchCount: 1, BacklogCount: 1},
 		genBulk(20, "foo"),
 		&clientMock{

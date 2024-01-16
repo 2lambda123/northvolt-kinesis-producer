@@ -3,7 +3,7 @@ package kpzap
 import (
 	"go.uber.org/zap"
 
-	producer "github.com/northvolt/kinesis-producer"
+	producer "github.com/2lambda123/northvolt-kinesis-producer"
 )
 
 // Logger implements a zap.Logger logger for kinesis-producer
