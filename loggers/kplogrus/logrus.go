@@ -1,7 +1,7 @@
 package kplogrus
 
 import (
-	producer "github.com/northvolt/kinesis-producer"
+	producer "github.com/2lambda123/northvolt-kinesis-producer"
 	"github.com/sirupsen/logrus"
 )
 
